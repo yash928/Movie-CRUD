@@ -1,0 +1,10 @@
+.rough
+.vscode
+.secrets
+.config
+.grpc_logs
+.grpc_logs
+
+.rough
+data
+.env
