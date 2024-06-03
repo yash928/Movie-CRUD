@@ -9,12 +9,10 @@ COPY go.sum .
 
 RUN mkdir .logs
 
-# Copy the entire application to the container
-
 # Download dependencies
 RUN go mod download
 
-
+# Copy the entire application to the container
 COPY . .
 
 # Build the Go application
