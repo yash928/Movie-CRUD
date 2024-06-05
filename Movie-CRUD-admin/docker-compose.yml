@@ -4,19 +4,19 @@ services:
   postgres:
     image: postgres:alpine3.20
     environment:
-      - POSTGRES_USER=admin
-      - POSTGRES_PASSWORD=admin1234
-      - POSTGRES_DB= admindb
+      - POSTGRES_USER=${DB_USERNAME}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB= ${DB_DATABASE}
     ports:
       - "5432:5432"
     volumes:
       - ./data/docker-volumes/postgres:/var/lib/postgresql/data
-    networks_mode: "host"
+    network_mode: "host"
 
   golang-app:
     build:
       context: .
-      dockerfile: dockerfile
+      dockerfile: Dockerfile
     ports:
       - "8000:8000"
     network_mode: "host"

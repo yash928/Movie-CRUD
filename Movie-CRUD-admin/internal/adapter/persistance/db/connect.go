@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"log"
 	"movie_crud/internal/config"
+
+	_ "github.com/lib/pq"
 )
 
 func Connect(dbConf config.DB) (*sql.DB, error) {
